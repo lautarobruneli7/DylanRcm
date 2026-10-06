@@ -1,0 +1,13 @@
+{
+  "name": "dylan-rcm-site",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix web install && npm --prefix server install",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server start",
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "typecheck": "npm --prefix web run typecheck && npm --prefix server run typecheck"
+  },
+  "engines": { "node": ">=22.13" }
+}

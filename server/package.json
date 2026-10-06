@@ -1,0 +1,20 @@
+{
+  "name": "dylan-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": { "node": ">=22.13" },
+  "dependencies": {
+    "express": "^5.1.0",
+    "tsx": "^4.20.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^26.0.0",
+    "typescript": "^7.0.0"
+  }
+}

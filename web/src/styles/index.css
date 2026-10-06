@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* ==================== TOKENS DE DISEÑO ====================
+   Identidad tomada del banner/logo de Dylan: rojo, blanco y negro, títulos condensados.
+   El rojo (--color-accent) se puede cambiar desde Panel > Ajustes sin tocar código. */
+@theme {
+  --color-accent: #e3241d;
+  --color-accent-hi: #ff3b32;
+  --color-ink: #0b0b0c;
+  --color-surface: #141416;
+  --color-surface-2: #1c1c1f;
+  --color-line: rgb(255 255 255 / 0.1);
+  --color-muted: #a1a1a8;
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-card: 14px;
+  --shadow-card: 0 18px 40px -22px rgb(0 0 0 / 0.8);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--color-ink); color: #fff; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Aparición al entrar en viewport (ver landing/components/Reveal.tsx) */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Franjas negras del banner: detalle decorativo reutilizable */
+.stripe-lines { border-block: 3px solid #000; }
+
+/* ---------- Componentes reutilizables (landing + panel) ---------- */
+@utility btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn-primary { @apply btn bg-accent text-white hover:bg-accent-hi; }
+@utility btn-light { @apply btn bg-white text-black hover:bg-white/85; }
+@utility btn-ghost { @apply btn border border-white/20 bg-white/5 text-white hover:bg-white/10; }
+@utility btn-danger { @apply btn border border-red-500/40 bg-red-500/10 text-red-300 hover:bg-red-500/20; }
+@utility card { @apply rounded-[var(--radius-card)] border border-line bg-surface shadow-card; }
+@utility input { @apply w-full rounded-lg border border-line bg-surface-2 px-3 py-2.5 text-sm text-white placeholder:text-white/35 focus:border-accent focus:outline-none; }
+@utility eyebrow { @apply font-display text-sm uppercase tracking-[0.2em] text-accent; }
