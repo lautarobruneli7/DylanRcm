@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Landing administrable de Dylan RCM
 
 Landing pública + panel de administración (`/admin`). Todo el contenido vive en una base SQLite y se edita desde el panel: nadie necesita tocar código para actualizar novedades, videos, redes o textos.
@@ -56,3 +57,7 @@ web/src
 ## Agregar una red nueva al selector
 
 En `web/src/lib/icons.tsx`: importar el icono desde `simple-icons` y sumarlo a `ICONS`. Las redes sin icono propio se cargan igual con el icono genérico de link.
+=======
+# DylanRcm
+Dylan page
+>>>>>>> 0996d97ca2bfadbf1b91872a6fb80d0de44e17f6
